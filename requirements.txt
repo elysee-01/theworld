@@ -1,0 +1,15 @@
+django
+pillow
+
+django-jazzmin
+
+whitenoise
+django-brotli
+gunicorn
+
+djangorestframework
+drf_yasg2
+
+django-import-export
+
+datapackage

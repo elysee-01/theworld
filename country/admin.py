@@ -12,8 +12,8 @@ class CityInline(admin.TabularInline):
 
 @admin.register(models.Country)
 class CountryAdmin(Action):
-    list_display = ('official_name', 'iso', 'iso3', 'capital', 'continent', 'activation', 'drp')
-    list_display_links = ['official_name', 'iso', 'iso3', 'capital', 'continent', 'drp']
+    list_display = ('official_name', 'iso', 'iso3', 'name', 'continent', 'activation', 'drp')
+    list_display_links = ['official_name', 'iso', 'iso3', 'name', 'continent']
     list_filters = ['status', 'continent']
     search_fields = ['name', 'iso', 'iso3', 'capital', 'continent']
 

@@ -4,8 +4,9 @@ from import_export.admin import ImportExportModelAdmin
 from contextmenu.options import CustomModelAdmin
 
 
+# CustomModelAdmin
 
-class Action(CustomModelAdmin, ImportExportModelAdmin):
+class Action(ImportExportModelAdmin):
 
     date_hierarchy = 'date_add'
     ordering = ('-date_add',)

@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'drf_yasg2',
     'import_export',
     'contextmenu',
-    'emencia.django.countries',
+    'django_countries',
 
     'continent.apps.ContinentConfig',
     'country.apps.CountryConfig',

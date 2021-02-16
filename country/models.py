@@ -15,7 +15,7 @@ class Country(models.Model):
     capital = models.OneToOneField("city.City", on_delete=models.SET_NULL, related_name='country_capital', null=True, blank=True)
     continent = models.ForeignKey("continent.Continent", on_delete=models.SET_NULL, related_name='country_capital', null=True, blank=True)
 
-    drapeau = models.FileField(upload_to='images/country', null=True, blank=True)
+    drapeau = models.FileField(upload_to='flags/', null=True, blank=True)
 
     status = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)

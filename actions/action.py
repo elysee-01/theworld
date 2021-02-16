@@ -18,9 +18,9 @@ class Action(ImportExportModelAdmin):
 
     def activation(self, obj):
         if obj.status:
-            return mark_safe('<img style="width:18px;height:18px" src="https://res.cloudinary.com/dfifj7ahf/image/upload/v1613241914/media/icone/true_s7tlkp.svg" alt="True">')
+            return mark_safe('<img style="width:15px;height:15px" src="https://res.cloudinary.com/dfifj7ahf/image/upload/v1613241914/media/icone/true_s7tlkp.svg" alt="True">')
         else:
-            return mark_safe('<img style="width:18px;height:18px" src="https://res.cloudinary.com/dfifj7ahf/image/upload/v1613241914/media/icone/false_fu6ark.svg" alt="False">')
+            return mark_safe('<img style="width:15px;height:15px" src="https://res.cloudinary.com/dfifj7ahf/image/upload/v1613241914/media/icone/false_fu6ark.svg" alt="False">')
 
 
     def deactivate(self, request, queryset):

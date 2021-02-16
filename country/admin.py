@@ -12,16 +12,16 @@ class CityInline(admin.TabularInline):
 
 @admin.register(models.Country)
 class CountryAdmin(Action):
-    list_display = ('official_name', 'iso', 'iso3', 'name', 'continent', 'activation', 'drp')
-    list_display_links = ['official_name', 'iso', 'iso3', 'name', 'continent']
-    list_filters = ['status', 'continent']
+    list_display = ('name', 'iso', 'iso3', 'telephone_prefix', 'capital', 'continent', 'activation', 'drp')
+    list_display_links = ['name', 'iso', 'iso3', 'telephone_prefix', 'capital', 'continent']
+    list_filter = ['status', 'continent']
     search_fields = ['name', 'iso', 'iso3', 'capital', 'continent']
 
     inlines = [CityInline]
 
     def drp(self, obj):
         try:
-            return mark_safe(f'<img src="{obj.drapeau.url}" style="height:50px; width:50px">')
+            return mark_safe(f'<img src="{obj.drapeau.url}" style="height:10px; width:15px">')
         except (FileNotFoundError, ValueError) as e:
             return 'Aucun Fichier'
     drp.short_description = 'Drapeau'

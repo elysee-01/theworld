@@ -12,8 +12,9 @@ class Continent(models.Model):
     date_upd = models.DateTimeField(auto_now=True)
 
     class Meta:
+        ordering = ['name']
         verbose_name = 'Continent'
         verbose_name_plural = 'Continents'
 
     def __str__(self):
-        return str(self.name)
+        return f'[{self.code}] {self.name}'

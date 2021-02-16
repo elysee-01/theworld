@@ -13,7 +13,7 @@ class Country(models.Model):
     latitude = models.FloatField(max_length=255, null=True, blank=True)
 
     capital = models.OneToOneField("city.City", on_delete=models.SET_NULL, related_name='country_capital', null=True, blank=True)
-    continent = models.ForeignKey("continent.Continent", on_delete=models.SET_NULL, related_name='country_capital', null=True, blank=True)
+    continent = models.ForeignKey("continent.Continent", on_delete=models.SET_NULL, related_name='continent_countries', null=True, blank=True)
 
     drapeau = models.FileField(upload_to='flags/', null=True, blank=True)
 
@@ -22,6 +22,7 @@ class Country(models.Model):
     date_upd = models.DateTimeField(auto_now=True)
 
     class Meta:
+        ordering = ['name']
         verbose_name = 'Country'
         verbose_name_plural = 'Countries'
 

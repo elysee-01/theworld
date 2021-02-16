@@ -23,3 +23,9 @@ class ContinentAdmin(Action):
         except (FileNotFoundError, ValueError) as e:
             return 'Aucun Fichier'
     img.short_description = 'Image'
+
+    def get_contextmenu_items(self, obj):
+        return [
+            {'title': 'Lien 1', 'url': '/'},
+            {'title': 'Lien 2', 'url': '/'},
+        ]

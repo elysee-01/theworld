@@ -9,9 +9,8 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-EMAIL = 'memorisez@mail.com'
-PASSWORD = 'azerty12345@'
-
+EMAIL = ''
+PASSWORD = ''
 
 
 from pathlib import Path
@@ -45,9 +44,8 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'drf_yasg2',
-    'contextmenu',
+    # 'contextmenu',
     'import_export',
-    'django_countries',
 
     'continent.apps.ContinentConfig',
     'country.apps.CountryConfig',

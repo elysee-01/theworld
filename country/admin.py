@@ -26,8 +26,8 @@ class CountryAdmin(Action):
             return 'Aucun Fichier'
     drp.short_description = 'Drapeau'
 
-    def get_contextmenu_items(self, obj):
-        return [
-            {'title': f"Vue de l'API ({obj.iso})", 'url': f'/api/country/{obj.id}/'},
-            {'title': "Base de l'API", 'url': '/api/country/'},
-        ]
+    # def get_contextmenu_items(self, obj):
+    #     return [
+    #         {'title': f"Vue de l'API ({obj.iso})", 'url': f'/api/country/{obj.id}/'},
+    #         {'title': "Base de l'API", 'url': '/api/country/'},
+    #     ]

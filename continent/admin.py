@@ -31,8 +31,8 @@ class ContinentAdmin(Action):
     img.short_description = 'Image'
 
 
-    def get_contextmenu_items(self, obj):
-        return [
-            {'title': f"Vue de l'API ({obj.code})", 'url': f'/api/continent/{obj.id}/'},
-            {'title': "Base de l'API", 'url': '/api/continent/'},
-        ]
+    # def get_contextmenu_items(self, obj):
+    #     return [
+    #         {'title': f"Vue de l'API ({obj.code})", 'url': f'/api/continent/{obj.id}/'},
+    #         {'title': "Base de l'API", 'url': '/api/continent/'},
+    #     ]

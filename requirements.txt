@@ -12,6 +12,6 @@ drf_yasg2
 
 django-import-export
 
-datapackage
+# datapackage
 
 django-admin-contextmenu

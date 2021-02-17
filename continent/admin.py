@@ -12,20 +12,27 @@ class CountryInline(admin.TabularInline):
 
 @admin.register(models.Continent)
 class ContinentAdmin(Action):
-    list_display = ('code', 'name', 'superficie', 'date_add', 'date_upd', 'activation', 'img')
-    list_display_links = ['code', 'name', 'superficie', 'date_add', 'date_upd', 'activation', 'img']
+    list_display = ('code', 'name', 'superf', 'date_add', 'date_upd', 'activation', 'img')
+    list_display_links = ['code', 'name', 'superf', 'date_add', 'date_upd', 'activation', 'img']
+    ordering = ('name',)
 
     inlines = [CountryInline]
 
+    def superf(self, obj):
+        return f'{int(obj.superficie)} Km²'
+    superf.short_description = 'superficie'
+
+
     def img(self, obj):
         try:
-            return mark_safe(f'<img src="{obj.image.url}" style="height:50px; width:50px">')
+            return mark_safe(f'<img src="{obj.image.url}" style="height:100px; width:100px; border-radius:50%;border:3px solid #fff;box-shadow: 0 0 20px #AAA">')
         except (FileNotFoundError, ValueError) as e:
             return 'Aucun Fichier'
     img.short_description = 'Image'
 
+
     def get_contextmenu_items(self, obj):
         return [
-            {'title': 'Lien 1', 'url': '/'},
-            {'title': 'Lien 2', 'url': '/'},
+            {'title': f"Vue de l'API ({obj.code})", 'url': f'/api/continent/{obj.id}/'},
+            {'title': "Base de l'API", 'url': '/api/continent/'},
         ]

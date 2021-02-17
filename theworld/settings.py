@@ -45,8 +45,8 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'drf_yasg2',
-    'import_export',
     'contextmenu',
+    'import_export',
     'django_countries',
 
     'continent.apps.ContinentConfig',
@@ -55,7 +55,7 @@ INSTALLED_APPS = [
 ]
 
 
-IMPORT_EXPORT_USE_TRANSACTIONS = True
+# IMPORT_EXPORT_USE_TRANSACTIONS = True
 
 
 MIDDLEWARE = [

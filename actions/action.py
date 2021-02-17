@@ -1,10 +1,8 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 from import_export.admin import ImportExportModelAdmin
-from contextmenu.options import CustomModelAdmin
+# from contextmenu.options import CustomModelAdmin
 
-
-# CustomModelAdmin
 
 class Action(ImportExportModelAdmin):
 

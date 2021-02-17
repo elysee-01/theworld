@@ -15,19 +15,19 @@ class CountryAdmin(Action):
     list_display = ('name', 'iso', 'iso3', 'telephone_prefix', 'capital', 'continent', 'activation', 'drp')
     list_display_links = ['name', 'iso', 'iso3', 'telephone_prefix', 'capital', 'continent']
     list_filter = ['status', 'continent']
-    search_fields = ['name', 'iso', 'iso3', 'capital', 'continent']
+    search_fields = ['name', 'iso', 'iso3']
 
     inlines = [CityInline]
 
     def drp(self, obj):
         try:
-            return mark_safe(f'<img src="{obj.drapeau.url}" style="height:10px; width:15px">')
+            return mark_safe(f'<img src="{obj.drapeau.url}" style="height:100px; width:150px;border-radius:5px;border:5px solid #fff;box-shadow: 0 0 20px #AAA">')
         except (FileNotFoundError, ValueError) as e:
             return 'Aucun Fichier'
     drp.short_description = 'Drapeau'
 
     def get_contextmenu_items(self, obj):
         return [
-            {'title': 'Lien 1', 'url': '/'},
-            {'title': 'Lien 2', 'url': '/'},
+            {'title': f"Vue de l'API ({obj.iso})", 'url': f'/api/country/{obj.id}/'},
+            {'title': "Base de l'API", 'url': '/api/country/'},
         ]
